@@ -8,6 +8,7 @@ const CardBoard = () => {
   const [secondFlip, setSecondFlip] = useState(null);
   const [fliped, setFliped] = useState(false);
   const [totalTurns, setTotalTurns] = useState(0);
+  //const [showModal, setShowModal] = useState(false);
 
   const lettersList = [
     { name: "A", matched: false },
@@ -28,6 +29,17 @@ const CardBoard = () => {
     firstFlip ? setSecondFlip(card) : setFirstFlip(card);
   };
 
+  // const isGameFinished = () =>{
+  //   let isFinished = true;
+  //   letters.forEach((letter) => {
+  //     if(!letter.matched){
+  //       isFinished = false;
+  //     }
+  //   })
+
+  //   return isFinished;
+  // }
+
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -38,23 +50,28 @@ const CardBoard = () => {
   }
 
   const handleGameReset = useCallback(() =>{
-    setLetters(shuffleArray(lettersList));
     setFirstFlip(null);
     setSecondFlip(null);
     setFliped(false);
     setTotalTurns(0);
+    setLetters(shuffleArray(lettersList.map(a =>  ({...a}))));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   useEffect(() => {
-    handleGameReset()
+    handleGameReset();
   }, [handleGameReset]);
 
   const resetValuesForNextTurn = () => {
     setFirstFlip(null);
     setSecondFlip(null);
     setFliped(false);
-    setTotalTurns(prev => prev+1)
+    setTotalTurns(prev => prev+1);
+
+    // if(totalTurns>=6){
+    //   let check = isGameFinished();
+    //   setShowModal(check);
+    // }
   };
 
   useEffect(() => {
