@@ -1,4 +1,4 @@
-import CardBoard from './MemoryGame/CardBoard';
+import CardBoard from './Components/CardBoard';
 
 function App() {
   return (
