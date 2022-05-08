@@ -1,0 +1,53 @@
+.boardWrapper {
+    background-image: linear-gradient(to right,lightblue,royalblue);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.board{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    padding: 0.625rem;
+    justify-content: center;
+    width:39.063rem;
+    flex-wrap: wrap;
+}
+
+.startButton{
+    background-image: linear-gradient(to right,lightblue,royalblue);
+    border-radius: 0.313rem;
+    width: 10rem;
+    padding: 0.625rem;
+    margin-left:45%;
+}
+
+.score{
+    margin-left:48%;
+}
+
+@media only screen and (max-width: 645px) {
+    .startButton{
+        margin-left:40%;
+    }
+
+    .score{
+        margin-left:42%;
+    }
+}
+
+@media only screen and (max-width: 482px) {
+    .startButton{
+        margin-left:30%;
+    }
+
+    .score{
+        margin-left:35%;
+    }
+}

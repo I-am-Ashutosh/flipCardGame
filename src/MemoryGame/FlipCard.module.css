@@ -1,0 +1,31 @@
+.cardWrapper{
+    border: 0.188rem solid black;
+    width: 9.375rem;
+    height: 9.375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.letter{
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.cardFront{
+    background-color: blueviolet;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+}
+
+.clickedCard{
+    transform: rotateY(90deg);
+    transition: all ease-in-out 0.4s;
+}
